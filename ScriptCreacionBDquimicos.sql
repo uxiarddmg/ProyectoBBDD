@@ -94,8 +94,9 @@ create table lineas_ped_com(
 id int auto_increment primary key,
 albaran_com_id int,
 producto_id int,
+precio_unitario decimal(20,2),
 cantidad int,
-subtotal decimal(20,2),
+subtotal decimal(20,2) generated always as (precio_unitario * cantidad) stored,
 foreign key (albaran_com_id) references albaran_com (id),
 foreign key (producto_id) references producto (id)
 );
@@ -121,7 +122,9 @@ email varchar(50),
 datos_bancarios_id int,
 sector_id int,
 tipo_cliente enum("premium", "mediano", "pequeño"),
-fecha_alta date
+fecha_alta date,
+foreign key (sector_id) references sector (id),
+foreign key (datos_bancarios_id) references datos_bancarios (id)
 );
 
 create table albaran_ven(
@@ -143,10 +146,19 @@ foreign key (albaran_ven_id) references albaran_ven (id),
 foreign key (producto_id) references producto (id)
 );
 
-create table factura();
+create table factura(
+id int auto_increment primary key,
+num_factura int,
+fecha_emision date,
+subtotal decimal(10,2),
+iva int,
+total decimal(10,2) generated always as (subtotal * iva/100) stored
+);
 
-
-
-
-
-
+create table ALB_FAC(
+id int auto_increment primary key,
+albaran_ven_id int,
+factura_id int,
+foreign key (albaran_ven_id) references albaran_ven (id),
+foreign key (factura_id) references factura (id)
+);
