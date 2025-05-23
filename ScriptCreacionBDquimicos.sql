@@ -43,7 +43,7 @@ create table tipo_producto(
 id int auto_increment primary key,
 producto_id int,
 tipo varchar(100) not null,
-concentracion decimal(10,5),
+concentracion decimal(20,5),
 unidades_concentracion_id int,
 almacenamiento_id int,
 stock_min int,
@@ -109,7 +109,7 @@ sector varchar(50)
 create table datos_bancarios(
 id int auto_increment primary key,
 num_cuenta varchar(50),
-sucursal varchar(20)
+sucursal varchar(100)
 );
 
 create table cliente(
@@ -155,7 +155,7 @@ iva int,
 total decimal(10,2) generated always as (subtotal * iva/100) stored
 );
 
-create table ALB_FAC(
+create table alb_fac(
 id int auto_increment primary key,
 albaran_ven_id int,
 factura_id int,
