@@ -25,7 +25,7 @@ especificacion varchar(300)
 create table producto(
 id int auto_increment primary key,
 nombre varchar(100) not null, -- No puede ser unico ya que puede existir de varias concentraciones
-precio_unitario decimal(10,5),
+precio_unitario decimal(10,2),
 fecha_caducidad date,
 stock int,
 requisitos_transporte_id int, -- cambio el orden del nombre para que sea más facil de leer
