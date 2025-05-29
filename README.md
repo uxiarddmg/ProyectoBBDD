@@ -19,8 +19,10 @@ El modelo E-R fue diseñado siguiendo principios de normalización hasta 3FN
 - `ScriptCreacionBDquimicos.sql`: Contiene las sentencias para la creación de BD y de sus tablas.
 - `ScriptDatosBDquimicos.sql`: contiene datos de prueba para la base.
 - `ScriptProcedimientos_Funciones_Triggers.sql`: contiene los posibles *Procedimientos*, *Funciones* y *Triggers* útiles en la BD
+- `ConsultasSQL.sql`: contiene ejemplos de consultas que pueden ser interesantes en esta BD
 
 ## 🧪 Pruebas y Validaciones
+Incluidas en `ScriptProcedimientos_Funciones_Triggers.sql`
 
 ## :woman: Autor
 **Uxía RD** - [GitHub](https://github.com/uxiarddmg)
